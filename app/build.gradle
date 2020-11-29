@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.rohit.piceditor"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled false
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4G"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //For adding Text on Image, U can use this For Filters also,Check out Github for more info
+    implementation 'ja.burhanrashid52:photoeditor:1.0.0'
+    //For Getting Permissions like Storage Camera
+    implementation 'com.karumi:dexter:6.2.1'
+    //For Gettign Shadows Effect on ImageView
+    implementation 'com.jackandphantom.android:paletteshadowview:1.0.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:palette-v7:28.0.0'
+    implementation 'com.github.devlight.shadowlayout:library:1.0.2'
+    //To Detect Weather Keyboard is Open or Not
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2'
+    //To Crop Image in Divider Activity
+    implementation 'com.steelkiwi:cropiwa:1.0.3'
+    implementation 'com.yashoid:instacropper:1.0.6'
+    //To Get Contrast and all Efects
+    implementation 'com.github.krokyze:ucropnedit:2.2.6'
+}

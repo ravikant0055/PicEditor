@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#E3DADA"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnAddImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="#000000"
+        android:text="Add Image"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#EAE2E2"
+        android:foregroundGravity="center"
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ja.burhanrashid52.photoeditor.PhotoEditorView
+            android:id="@+id/photoEditorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginBottom="20dp"
+            android:background="#EAE4E4"
+            android:gravity="center"
+            android:visibility="visible">
+
+        </ja.burhanrashid52.photoeditor.PhotoEditorView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:text="Save" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnExp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/add_colour" />
+
+            <ImageView
+                android:id="@+id/btnDivider"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/divider2" />
+
+            <ImageView
+                android:id="@+id/btnText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:visibility="visible"
+                app:srcCompat="@drawable/text"
+                app:tint="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btnShadow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/shadow" />
+
+            <ImageView
+                android:id="@+id/btnCanvas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/canvas" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
