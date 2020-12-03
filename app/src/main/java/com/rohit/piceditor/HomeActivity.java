@@ -67,6 +67,21 @@ public class HomeActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
 
 
+        Dexter.withContext(HomeActivity.this)
+                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                    }
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                        Toast.makeText(HomeActivity.this, "Allow Permission To Use This App", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                    }
+                })
+                .check();
 
         //Initialising Custom ImageView from a GithubLibrary
         mPhotoEditor = new PhotoEditor.Builder(this, mPhotoEditorView)
